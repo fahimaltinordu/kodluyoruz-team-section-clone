@@ -25,7 +25,7 @@ body {
     @extend .flexboxcol;
     background: #fff;
     .banner {
-        margin: 50px 0 30px 0;
+        margin: 2.5rem 0 2.5rem 0;
         text-align: center;
         height:auto;
         line-height:40px;
@@ -42,6 +42,7 @@ body {
         }
     }
     h3 {
+        text-align:center;
         letter-spacing: -.025em;
         font-size: 36px;
         color: #161e2e;
@@ -55,12 +56,17 @@ body {
 .item {
     width: 270px;
     height:350px;
-    background-color: rgb(255, 255, 255);
+    // background-color: rgb(255, 255, 255);
     border-radius: 5px;
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
     position:relative;
     overflow: hidden;
+    
     &:hover {
+        img {
+            top:-100%;
+            left:0;
+        }
         .content {
             top:0; 
             a {
@@ -69,7 +75,13 @@ body {
         }  
         
     }
-
+    img {
+        position:absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        transition: top .4s cubic-bezier(.17,.67,.5,1.03) .15s;
+    }
     .content {
         width:270px;
         height: 350px;
@@ -79,7 +91,7 @@ body {
         position:absolute;
         top:75%;
         left:0;
-        z-index:1;
+        // z-index:1;
         transition:top .4s cubic-bezier(.17,.67,.5,1.03) .15s;
         
         h4 {
@@ -124,30 +136,14 @@ body {
         }
     }
 }
-.strateji, .elci, .ekip {
+.strateji, .elci {
     @extend .flexboxwraprow;
     padding-left:40px;
     padding-right:40px;
     margin-bottom: 1.5rem;
+    width:100%;
 }
-.strateji {
-    .item {
-            background-repeat: no-repeat;
-            background-size: contain;
-        &:nth-of-type(1) {
-            background-image: url(https://cdn.sanity.io/images/9kdepi1d/production/c01d160077696398193d254e7649ce26f5391b4f-634x655.jpg?w=300&h=310&fit=crop&fm=webp);
-           
-        }
-        &:nth-of-type(2) {
-            background-image: url(https://cdn.sanity.io/images/9kdepi1d/production/b160130d094ac853dbd841d80ad1a78f9494cdd9-1042x1072.png?w=300&h=309&fit=crop&fm=webp);
-        }
-        &:nth-of-type(3) {
-            background-image: url(https://cdn.sanity.io/images/9kdepi1d/production/adf51f6e737bdefec8af07f1915225a1a633cd79-1000x1013.jpg?w=300&h=304&fit=crop&fm=webp);
-        }
-        &:nth-of-type(4) {
-            background-image: url(https://cdn.sanity.io/images/9kdepi1d/production/86266c1d209d83868a5c9bb8cda52eda230e401b-768x1024.jpg?w=300&h=400&fit=crop&fm=webp);
-        }
-    }
-    
+.elci {
+    justify-content: space-evenly;
     
 }
